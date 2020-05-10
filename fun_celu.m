@@ -1,4 +1,4 @@
-function y = fun_celu(itemsVal, itemsWeight, X, W)
+function y = fun_celu(itemsVal, itemsWeight, X, W, alfa)
     if ~isvector(X)
         error('X isnt a vector');
     end
@@ -16,10 +16,9 @@ function y = fun_celu(itemsVal, itemsWeight, X, W)
         w = w + itemsWeight(i) * X(i);
     end
     
+    y = -sum;
     if w > W
-        y = 0;
-    else
-        y = - sum;
+        y = y + alfa * (w - W);
     end
 end
 

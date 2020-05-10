@@ -1,4 +1,5 @@
 function csvProvider(V, filename, label1, label2, valType)
+%% funkcja drukująca wektor do formatu pliku .csv
     range = 1 : length(V);
     
     fileID = fopen(filename, 'w');
